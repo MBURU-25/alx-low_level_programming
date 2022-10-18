@@ -1,11 +1,10 @@
 #include "main.h"
 /**
- * print_alphabet - function to print abc
- * Return: Always 0
+ * print_alphabet - print all alphabet in lowercase
  */
 void print_alphabet(void)
-{
-	char c;
+{	
+       	* char c;
 
 	for (c = 'a'; c <= 'z'; c++)
 	{
