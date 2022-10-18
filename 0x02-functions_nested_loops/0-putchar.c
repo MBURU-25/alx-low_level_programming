@@ -1,13 +1,20 @@
-#include "holberton.h"
+#include "main.h"
 /**
- * main - entry point
- * Return: 0
+ * main - print putchar
+ * Return: always 0
  */
 int main(void)
 {
-	char *holberton;
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
 
-	for (holberton = "Holberton\n"; *holberton != '\0'; ++holberton)
-		_putchar(*holberton);
 	return (0);
+
 }
