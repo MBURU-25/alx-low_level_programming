@@ -1,46 +1,49 @@
 #include "main.h"
 /**
- * print_times_table - prints the n times table, starting with 0
- * @n: number of the times table
+ * print_times_table - Print the n times table, starting from 0
+ * @n: The times table to print
+ *
+ * Return: Nothing
  */
 void print_times_table(int n)
 {
-	int i, j, k;
+	int x, y, mult, one, ten, hund;
 
+	x = 0;
 	if (n >= 0 && n <= 15)
 	{
-		for (i = 0; i <= n; i++)
+		while (x <= n)
 		{
-			for (j = 0; j <= n; j++)
+			y = 0;
+			while (y <= n)
 			{
-				k = j * i;
-				if (j == 0)
+				mult = x * y;
+				one = mult % 10;
+				ten = mult % 100 / 10;
+				hund = mult / 100;
+				if (hund == 0 && y != 0)
 				{
-					_putchar(k + '0');
-				} else if (k < 10 && j != 0)
-				{
-					_putchar(',');
 					_putchar(' ');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(k + '0');
-				} else if (k >= 10 && k < 100)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar((k / 10) + '0');
-					_putchar((k % 10) + '0');
-				} else if (k >= 100)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar((k / 100) + '0');
-					_putchar(((k / 10) % 10) + '0');
-					_putchar((k % 10) + '0');
+					if (ten == 0)
+						_putchar(' ');
+					else
+						_putchar(ten + '0');
 				}
+				else if (hund != 0)
+				{
+					_putchar(hund + '0');
+					_putchar(ten + '0');
+				}
+				_putchar(one + '0');
+				if (y != n)
+				{
+					_putchar(',');
+					_putchar(' ');
+				}
+				y++;
 			}
 			_putchar('\n');
+			x++;
 		}
 	}
 }
